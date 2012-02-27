@@ -1,0 +1,76 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#homeunit.hero-unit {
+	background-color: rosybrown;
+}
+
+div#userhomesearchbar.hero-unit {
+	background-color: rosybrown;
+	padding: 10px;
+}
+
+div#usersearchresults.hero-unit {
+	background-color: lightblue;
+	padding: 10px;
+	height: 400px;
+	
+}
+
+div#userhomesearchbar.hero-unit form.button_to {
+	margin: 0 0 -10px;
+}
+
+div#userhomesearchbar.hero-unit form.form-search {
+	position:relative;
+	float: left;
+	left: 180px;
+	top: -27px;
+	
+}
+
+#signupbutton {
+	width:150px;
+	position:relative;
+	margin-top:20px;
+	left:300px;
+}
+
+#loginbutton {
+	width:150px;
+	position:relative;
+	margin-top:20px;
+	left:350px
+}
+
+.container-fluid {
+	background-color: whitesmoke;
+}
+
+.navbar .nav > li > a {
+	color: black;	
+}
+
+.navbar .nav > li > a:hover {
+	background-color: maroon;
+	
+}
+
+.navbar a:hover {
+	background-color: maroon;
+}
+/* I want to reduce the width of the hero-unit on the admin page*/
+.hero-unit #admin_school {
+	width: 180px;
+}
+
+div#homeunit.hero-unit form.form-search {
+	position:relative;
+	left:350px;
+	top: 50px;
+}
+
+.input-long search-query {
+	size:18;
+}

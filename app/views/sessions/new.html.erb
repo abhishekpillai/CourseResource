@@ -1,0 +1,9 @@
+<h2>Log in here</h2>
+
+<%= form_tag "/sessions" do %>  
+  <%= label_tag :email %> <%= text_field_tag :email %>
+  <%= label_tag :password %> <%= password_field_tag :password %></p>
+  <%= submit_tag "Log In" %>
+<% end %>
+
+<%= link_to "Back", root_url %>

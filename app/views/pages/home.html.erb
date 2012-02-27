@@ -1,0 +1,21 @@
+<div id="homeunit" class="hero-unit">
+
+	<h1 id="welcometext" style="text-align:center;">Welcome to <em>CourseResource</em></h1>
+	
+	<% if session[:user_id].nil? %>
+    	<a id="signupbutton" class="btn btn-large" href="<%= new_user_url %>">Sign Up</a>
+		<a id="loginbutton" class="btn btn-large" href="<%= new_session_url %>">Login</a>
+		<%= link_to "Populate DB", "/courses/populate" %>
+	<% end %>
+	
+	<%= render "searchform" %>
+</div>
+
+<% if @course_title.present? %>
+	<ol>
+	<% Course.all.each do |course| %>
+		<li>Dept No: <%= course.dept %> <br/> Course No: <%= course.course_no %> <br/> Title: <%= course.title %></li>
+	<% end %>
+	</ol>
+<% end %>
+

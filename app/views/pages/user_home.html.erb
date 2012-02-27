@@ -1,0 +1,27 @@
+<div class="row-fluid">
+	<div class="span3">
+		<div class="well sidebar-nav">
+			<h3 sytle="">Welcome, <%= user_first_name %></h3>
+			<p>
+				<ul>
+					<li><%= current_user.email %></li>
+					<% if current_user.school.present? %>
+						<li><%= current_user.school.name %></li>
+					<% end %>
+				</ul>
+			</p>
+		</div>
+	</div>
+	<div class="span9">
+		<div id="userhomesearchbar" class="hero-unit">
+			<%= button_to "Add Courses", "/courses/search", :class => "btn btn-small", method: :get %>
+			<%= render "searchform" %>
+		</div>
+		<% if current_user.courses.present? %>
+		<% else %>
+			<br/>
+			<h2>We don't have any courses on file for you.</h2>
+			<h4>Click the Add Courses button above to see which courses are available</h4>
+		<% end %>
+	</div>
+</div>

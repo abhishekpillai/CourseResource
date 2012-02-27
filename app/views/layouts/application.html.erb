@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CourseResource</title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="i-bar"></span>
+            <span class="i-bar"></span>
+            <span class="i-bar"></span>
+          </a>
+		  <% if !logged_in? %>
+          	<a class="brand" href="/pages/home" style="color:maroon;">CourseResource</a>
+          <% else %>
+			<a class="brand" href="<%= user_home_url %>" style="color:maroon;">CourseResource</a>
+		  <% end %>
+			<div class="container-fluid nav-collapse">
+            <ul class="nav">
+                <li><%= link_to "About", "pages/about"  %></li>
+				<% if logged_in? %>
+					<% if current_user.admin? %>
+                		<li><%= link_to "Admin Portal", admin_portal_url  %></li>
+					<% end %>
+					<li><%= link_to "Log Out", logout_url %></li>
+				<% end %>
+            </ul>
+			<% if logged_in? %>
+				<p class="navbar-text pull-right">Logged in as <a href="<%= user_url(current_user.id) %>" style="color:maroon;"><%= current_user.name %></a></p>
+          	<% end %>
+			</div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+   <div class="container">
+     <% [:notice, :error, :alert].each do |level| %>
+       <% unless flash[level].blank? %>
+         <div data-alert="alert" class="alert alert-<%= flash_class(level) %> fade in">
+           <a class="close" data-dismiss="alert" href="#">&times;</a>
+           <%= content_tag :p, flash[level] %>
+         </div>
+       <% end %>
+     <% end %>
+     <%= yield %>
+   </div>
+ </div><!--/row-->
+ <hr>
+ <footer>
+   <p>&copy; CourseResource 2012</p>
+ </footer>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<%= javascript_include_tag "application" %>
+
+</body>
+</html>

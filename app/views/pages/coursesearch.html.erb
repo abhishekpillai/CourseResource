@@ -1,0 +1,21 @@
+<div class="row-fluid">
+	<div class="span12">
+		<div id="userhomesearchbar" class="hero-unit">
+			<%= button_to "Add Courses", "/courses/search", :class => "btn btn-small" %>
+			<%= render "pages/searchform" %>
+		</div>
+	
+		<h4>Current Search: <%= @search if @search.present? %></h4>	
+	</div>
+	
+	<% if @results.present? %>
+		<% @results.each do |result| %>
+			<div class="span3">
+				<div id="usersearchresults" class="hero-unit">
+					<%= result.dept %> <%= result.course_no %>: <%= result.title %>
+					<br/><br/><%= result.short_description %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
