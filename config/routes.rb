@@ -10,6 +10,7 @@ CrsRsrs::Application.routes.draw do
   
   get "/courses/search"
   get "/courses/populate" => 'courses#populate_db'
+  get "/courses/:pin" => 'courses#pin', :as => :pin_course
 
   resources :users
 

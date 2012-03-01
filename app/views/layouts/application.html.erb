@@ -35,9 +35,9 @@
             <span class="i-bar"></span>
           </a>
 		  <% if !logged_in? %>
-          	<a class="brand" href="/pages/home" style="color:maroon;">CourseResource</a>
+          	<a class="brand" href="/pages/home">CourseResource</a>
           <% else %>
-			<a class="brand" href="<%= user_home_url %>" style="color:maroon;">CourseResource</a>
+			<a class="brand" href="<%= user_home_url %>">CourseResource</a>
 		  <% end %>
 			<div class="container-fluid nav-collapse">
             <ul class="nav">

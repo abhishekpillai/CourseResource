@@ -15,9 +15,16 @@
 	<div class="span9">
 		<div id="userhomesearchbar" class="hero-unit">
 			<%= button_to "Add Courses", "/courses/search", :class => "btn btn-small", method: :get %>
-			<%= render "searchform" %>
+			<% render "searchform" # this search form is deactivated for now %>
 		</div>
-		<% if current_user.courses.present? %>
+		<% if current_user.user_courses.present? %>
+			<% current_user.user_courses.each do |result| %>
+			<div class="span3">
+				<div id="userhomeresults" class="hero-unit">
+					<%= result.course.dept %> <%= result.course.course_no %>: <%= result.course.title %>
+				</div>
+			</div>
+			<% end %>
 		<% else %>
 			<br/>
 			<h2>We don't have any courses on file for you.</h2>

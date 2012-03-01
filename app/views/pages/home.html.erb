@@ -8,14 +8,6 @@
 		<%= link_to "Populate DB", "/courses/populate" %>
 	<% end %>
 	
-	<%= render "searchform" %>
-</div>
-
-<% if @course_title.present? %>
-	<ol>
-	<% Course.all.each do |course| %>
-		<li>Dept No: <%= course.dept %> <br/> Course No: <%= course.course_no %> <br/> Title: <%= course.title %></li>
-	<% end %>
-	</ol>
-<% end %>
+	<% render "searchform" # this search form is deactivated for now %>
+</div>	
 

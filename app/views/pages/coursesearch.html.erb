@@ -1,19 +1,25 @@
 <div class="row-fluid">
 	<div class="span12">
 		<div id="userhomesearchbar" class="hero-unit">
-			<%= button_to "Add Courses", "/courses/search", :class => "btn btn-small" %>
-			<%= render "pages/searchform" %>
+			<% render "pages/searchform" # this search form is deactivated for now %> 
 		</div>
 	
-		<h4>Current Search: <%= @search if @search.present? %></h4>	
 	</div>
 	
 	<% if @results.present? %>
+	
+		<h4>Current Search: <%= @search if @search.present? %></h4>	
 		<% @results.each do |result| %>
 			<div class="span3">
 				<div id="usersearchresults" class="hero-unit">
 					<%= result.dept %> <%= result.course_no %>: <%= result.title %>
 					<br/><br/><%= result.short_description %>
+					
+					<% if current_user.present? && current_user.user_courses.find_all_by_course_id(result.id).any? %>
+						<h4>You already added this course</h4>
+					<% else %>
+						<%= link_to "Add a course", pin_course_url(result.id) %>
+					<% end %>
 				</div>
 			</div>
 		<% end %>

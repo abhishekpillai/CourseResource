@@ -12,10 +12,35 @@ div#userhomesearchbar.hero-unit {
 }
 
 div#usersearchresults.hero-unit {
-	background-color: lightblue;
+	background-color: #567CDA;
+	color: white;
 	padding: 10px;
 	height: 400px;
-	
+	position: relative;
+  	box-shadow: 6px 6px 6px 3px #666;
+}
+
+div#userhomeresults.hero-unit {
+	background-color: #567CDA;
+	color: white;
+	padding: 10px 10px 20px 20px;
+	height: 70px;
+	width: 170px;
+  	box-shadow: 6px 6px 6px 3px #666;
+}
+
+div#usersearchresults.hero-unit h4 {
+	width: 300px;
+	position: absolute;
+	left: 50px;
+	top: 390px;
+}
+
+div#usersearchresults.hero-unit a {
+	width: 80px;
+	position: absolute;
+	left: 180px;
+	top: 390px;
 }
 
 div#userhomesearchbar.hero-unit form.button_to {
@@ -47,6 +72,9 @@ div#userhomesearchbar.hero-unit form.form-search {
 .container-fluid {
 	background-color: whitesmoke;
 }
+.container-fluid a.brand {
+	color: black;
+}
 
 .navbar .nav > li > a {
 	color: black;	
@@ -59,6 +87,7 @@ div#userhomesearchbar.hero-unit form.form-search {
 
 .navbar a:hover {
 	background-color: maroon;
+	color: white;
 }
 /* I want to reduce the width of the hero-unit on the admin page*/
 .hero-unit #admin_school {

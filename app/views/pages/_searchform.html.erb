@@ -1,13 +1,13 @@
 <% if params[:course].present? %>
 	<form class="form-search" accept-charset="UTF-8" action="/courses/search" method="get">
 		<input name="utf8" type="hidden" value="&#x2713;" />
-		<input class="input-long search-query" name="course" type="text" placeholder="<%= params[:course] %>"/>
+		<input class="input-long search-query" id="disabledInput" name="course" type="text" placeholder="<%= params[:course] %>">
 		<input class="btn" name="commit" type="submit" value="Search" />
 	</form>
 <% else %>
 	<form class="form-search" accept-charset="UTF-8" action="/courses/search" method="get">
 		<input name="utf8" type="hidden" value="&#x2713;" />
-		<input class="input-long search-query" name="course" type="text" placeholder="Search for a course..."/>
+		<input class="input-long search-query" id="disabledInput" name="course" type="text" placeholder="Search for a course...">
 		<input class="btn" name="commit" type="submit" value="Search" />
 	</form>
 <% end %>
