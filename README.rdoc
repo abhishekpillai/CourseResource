@@ -22,7 +22,7 @@
 
    * [ ]have a simple sign up form (to get started quickly) and implement a finish profile progress bar to be finished later
 
-   * [SOMEWHAT DONE]i want to specify for which courses i have signed up: "PIN YOUR COURSES"
+   * [X]i want to specify for which courses i have signed up: "PIN YOUR COURSES"
       * 1. Build a database of courses from northwestern's CS program
          * use web crawler nokogiri -- I HAVE DONE THIS
          * have first 10 courses in the db -- I HAVE DONE THIS
