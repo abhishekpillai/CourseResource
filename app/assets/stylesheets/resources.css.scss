@@ -1,0 +1,41 @@
+// Place all the styles related to the resources controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.youtubesearchresults p>a {
+	color: maroon;
+	
+}
+
+.youtubesearchresults img {
+	float: left;
+	width: 120px;
+	height: 100px;
+	padding: 10px;
+	
+}
+
+.youtubesearchresults p>a:hover {
+	background-color: blanchedalmond;
+	color: blue;
+}
+
+.youtubesearchresults .hero-unit {
+	background-color: blanchedalmond; 
+	padding: 20px 20px 30px 30px;
+	box-shadow:6px 6px 6px 3px #666;
+	height: 120px;
+}
+
+#resources_search_bar.hero-unit form {
+	margin: 0px 0px 0px 0px;
+}
+
+#resources_search_bar .input-long {
+	width: 500px;
+}
+div#resources_search_bar.hero-unit {
+	background-color: rosybrown;
+	padding: 10px;
+	margin: 10px;
+}

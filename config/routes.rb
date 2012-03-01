@@ -1,4 +1,5 @@
 CrsRsrs::Application.routes.draw do
+  
   root :to => 'pages#home'
   
   get "pages/home", :as => :home
@@ -11,6 +12,8 @@ CrsRsrs::Application.routes.draw do
   get "/courses/search"
   get "/courses/populate" => 'courses#populate_db'
   get "/courses/:pin" => 'courses#pin', :as => :pin_course
+  
+  resources :resources
 
   resources :users
 
