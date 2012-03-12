@@ -1,26 +1,22 @@
 <h1>Find Resources on <%= image_tag('edu_logo.jpg') %></h1>
 
-<div id="resources_search_bar" class="hero-unit">
-	<%= form_tag "/resources", :method => 'get', :class => 'form-search' do %>
-	    <%= text_field_tag :search, params[:search], :placeholder => "Type a topic", :class => "input-long search-query" %>
-	    <%= submit_tag "Search", :class => "btn" %>
-	<% end %> 
-</div>
 
-<strong><%= @results["openSearch$startIndex"]["$t"] %> - <%= @results["openSearch$itemsPerPage"]["$t"] %> of about <%= @results["openSearch$totalResults"]["$t"] %> results</strong>
-<br/>
-<h4><strong>Search results for: "<%= @results["title"]["$t"].split(': ')[1] %>"</strong></h4>
-<br/><br/>
-<div class="youtubesearchresults">
-<% @results["entry"].each do |result| %>
-	<div class="span10">
-		<div class="hero-unit">
-				<%= image_tag(result["media$group"]["media$thumbnail"].first["url"])  %>
-				<p>	<%= link_to result["title"]["$t"], result["link"].first["href"]  %> </p>
-					<%= result["content"]["$t"][0..340]  %>&hellip;
-				<br/><br/>
-					Tags: <%= result["media$group"]["media$keywords"]["$t"][0..150] %>&hellip;
+<% if @results.present? %>
+	<strong><%= @results["openSearch$startIndex"]["$t"] %> - <%= @results["openSearch$itemsPerPage"]["$t"] %> of about <%= @results["openSearch$totalResults"]["$t"] %> results</strong>
+	<br/>
+	<h4><strong>Search results for: "<%= @results["title"]["$t"].split(': ')[1] %>"</strong></h4>
+	<br/><br/>
+	<div class="youtubesearchresults">
+	<% @results["entry"].each do |result| %>
+		<div class="span10">
+			<div class="hero-unit">
+					<%= link_to image_tag(result["media$group"]["media$thumbnail"].first["url"]), result["link"].first["href"], :target => "_blank"  %>
+					<p>	<%= link_to result["title"]["$t"][0..80] , result["link"].first["href"], :target => "_blank" %> </p>
+						<div class="youtubesearchresultsdescriptions"><%= result["content"]["$t"][0..340]  %>&hellip;</div>
+					<br/><br/>
+						<div class="youtubesearchresultstags">Tags: <%= result["media$group"]["media$keywords"]["$t"][0..150] %>&hellip;</div>
+			</div>
 		</div>
+	<% end %>
 	</div>
 <% end %>
-</div>

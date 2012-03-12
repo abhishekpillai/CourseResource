@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .youtubesearchresults p>a {
-	color: maroon;
+	color: #83090E;
 	
 }
 
@@ -16,15 +16,25 @@
 }
 
 .youtubesearchresults p>a:hover {
-	background-color: blanchedalmond;
+	background-color: white;
 	color: blue;
 }
 
 .youtubesearchresults .hero-unit {
-	background-color: blanchedalmond; 
+	background-color: white; 
+	border: 2px solid maroon;
 	padding: 20px 20px 30px 30px;
-	box-shadow:6px 6px 6px 3px #666;
+/*	box-shadow:6px 6px 6px 3px #666;*/
 	height: 120px;
+}
+
+.youtubesearchresultsdescriptions {
+	color: #83090E;
+}
+
+.youtubesearchresultstags {
+	color: #83090E;
+	padding-bottom: 5px;
 }
 
 #resources_search_bar.hero-unit form {

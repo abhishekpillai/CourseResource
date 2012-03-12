@@ -41,7 +41,7 @@
          * know the topics covered in class through built in data, or by parsing a syllabus and picking out the topics covered
          * Use Nokogiri gem to scrape course descriptions, topics, etc
    * [ ]i want to be able to upload my class syllabus
-   * [ ]i want to search the web for resources based on topics
+   * [done for youtube]i want to search the web for resources based on topics
       * OCW
       * youtube
    * [ ]as a student, i want to know if my class is similar to any classes in the best schools in the country

@@ -13,3 +13,6 @@
  *= require_tree .
 */
 
+.form-search {
+	margin: 3px 40px;
+}

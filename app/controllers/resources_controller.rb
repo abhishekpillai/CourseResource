@@ -7,7 +7,6 @@ class ResourcesController < ApplicationController
       @results = JSON.parse(open("https://gdata.youtube.com/feeds/api/videos?q=#{@search}&category=education&alt=json").read)["feed"]
       render "index"
     else
-      @results = JSON.parse(open("https://gdata.youtube.com/feeds/api/videos?q=sample&category=education&alt=json").read)["feed"]
       render "index"
     end
   end

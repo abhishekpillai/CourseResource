@@ -41,13 +41,19 @@
 		  <% end %>
 			<div class="container-fluid nav-collapse">
             <ul class="nav">
-                <li><%= link_to "About", "pages/about"  %></li>
+                <li><%= link_to "About", "/pages/about"  %></li>
 				<% if logged_in? %>
 					<% if current_user.admin? %>
                 		<li><%= link_to "Admin Portal", admin_portal_url  %></li>
 					<% end %>
 					<li><%= link_to "Log Out", logout_url %></li>
 				<% end %>
+				<li>	
+					<%= form_tag "/resources", :method => 'get', :class => 'form-search' do %>
+					    <%= text_field_tag :search, params[:search], :placeholder => "Type in a topic", :class => "input-long search-query" %>
+					    <%= submit_tag "Search Resources", :class => "btn" %>
+					<% end %>
+				</li>
             </ul>
 			<% if logged_in? %>
 				<p class="navbar-text pull-right">Logged in as <a href="<%= user_url(current_user.id) %>" style="color:maroon;"><%= current_user.name %></a></p>

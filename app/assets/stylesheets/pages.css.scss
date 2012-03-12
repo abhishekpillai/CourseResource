@@ -11,23 +11,24 @@ div#userhomesearchbar.hero-unit {
 	padding: 10px;
 }
 
-
 div#usersearchresults.hero-unit {
-	background-color: #567CDA;
+	background-color: maroon;
 	color: white;
 	padding: 10px;
 	height: 400px;
 	position: relative;
   	box-shadow: 6px 6px 6px 3px #666;
+	border: 2px solid white;
 }
 
 div#userhomeresults.hero-unit {
-	background-color: #567CDA;
+	background-color: maroon ; /*#567CDA*/
 	color: white;
 	padding: 10px 10px 20px 20px;
 	height: 70px;
 	width: 170px;
   	box-shadow: 6px 6px 6px 3px #666;
+	border: 2px solid white;
 }
 
 div#usersearchresults.hero-unit h4 {
@@ -35,13 +36,15 @@ div#usersearchresults.hero-unit h4 {
 	position: absolute;
 	left: 50px;
 	top: 390px;
+	color: #666;
 }
 
 div#usersearchresults.hero-unit a {
-	width: 80px;
+	width: 85px;
 	position: absolute;
 	left: 180px;
 	top: 390px;
+	color: yellow;
 }
 
 div#userhomesearchbar.hero-unit form.button_to {
@@ -51,8 +54,8 @@ div#userhomesearchbar.hero-unit form.button_to {
 div#userhomesearchbar.hero-unit form.form-search {
 	position:relative;
 	float: left;
-	left: 180px;
-	top: -27px;
+	left: 150px;
+	top: -47px;
 	
 }
 

@@ -17,9 +17,11 @@ class CoursesController < ApplicationController
   
   def pin
     course = Course.find_by_id(params[:pin])
-    my_course = UserCourse.new
-    my_course.user = User.find(session[:user_id])
-    my_course.course = course
+    my_course = current_user.my_courses.build(:course => course)
+    # my_course = UserCourse.new
+    
+    # my_course.user = User.find(session[:user_id])
+    # my_course.course = course
     my_course.save
     redirect_to user_home_url
   end
@@ -33,12 +35,12 @@ class CoursesController < ApplicationController
     # @course_title = []
     # @course_no = []
     # @course_descriptions = []
-    # doc = Nokogiri::HTML(open("http://www.eecs.northwestern.edu/academics/course-descriptions.html"))
-    #    doc.xpath('//h2[@class = "contentheading"]/a[@class = "contentpagetitle"]').each do |node|
+    doc = Nokogiri::HTML(open("http://www.eecs.northwestern.edu/academics/course-descriptions.html"))
+       doc.xpath('//h2[@class = "contentheading"]/a[@class = "contentpagetitle"]').each do |node|
     #      @dept << node.text.split("-")[0].split(" ")[0]
     #      @course_no << node.text.split("-")[0].split(" ")[1]
     #   @course_title << node.text.split("-")[1]
-    # end
+    end
     # doc.xpath('//div[@class = "article-content"]').each do |node|
     #      @course_descriptions << node.text
     # end
