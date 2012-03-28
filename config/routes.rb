@@ -1,5 +1,7 @@
 CrsRsrs::Application.routes.draw do
   
+  get "coins/show"
+
   root :to => 'pages#home'
   
   get "pages/home", :as => :home

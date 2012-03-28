@@ -1,3 +1,11 @@
+COURSE RESOURCE
+Find, Collect, and Share the best online resources for your classes
+
+With the growth of online educational content, students have access to more and better ways of learning the topics being covered in class.
+Course Resources provides them a way to collect these resources and share them with other users
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
 --> Somewhat prioritized list of USER STORIES
 
    * [X]i want to create an user account/profile and select which school i am taking courses in
@@ -41,8 +49,9 @@
          * know the topics covered in class through built in data, or by parsing a syllabus and picking out the topics covered
          * Use Nokogiri gem to scrape course descriptions, topics, etc
    * [ ]i want to be able to upload my class syllabus
-   * [done for youtube]i want to search the web for resources based on topics
+   * [done for youtube, iTunesU]i want to search the web for resources based on topics
       * OCW
       * youtube
+	  * iTunesU
    * [ ]as a student, i want to know if my class is similar to any classes in the best schools in the country
    * [ ]i want to get weekly with a couple timely videos relevant to my course-work

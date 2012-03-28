@@ -1,6 +1,8 @@
-<h1>Find Resources on <%= image_tag('edu_logo.jpg') %></h1>
-
-
+<h1>Find Resources</h1> 
+<hr/>
+	<div id="resource_logos"><%= image_tag('edu_logo.jpg') %>	<%= image_tag('itunesU.png', :width => "90px") %>	<%= image_tag('MITOCW.png', :width => "90px") %></div>
+	
+<hr/>
 <% if @results.present? %>
 	<strong><%= @results["openSearch$startIndex"]["$t"] %> - <%= @results["openSearch$itemsPerPage"]["$t"] %> of about <%= @results["openSearch$totalResults"]["$t"] %> results</strong>
 	<br/>
